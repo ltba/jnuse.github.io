@@ -5,7 +5,7 @@ fetch("/music/songs.json")
   .then(songs => {
     console.log("歌单请求完毕！");
     suibianqugeming=songs;
-    [suibianqugeming[0],suibianqugeming[5]]=[suibianqugeming[5],suibianqugeming[0]];
+    [suibianqugeming[0],suibianqugeming[12]]=[suibianqugeming[12],suibianqugeming[0]];
     getwy(false,0);
     //getwy('3778678',suibianqugeming.length-1);
   })
