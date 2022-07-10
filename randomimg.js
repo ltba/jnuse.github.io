@@ -18,9 +18,9 @@ function randomimg(zhengjing){
     
     if(zhengjing){
         if(navigator.userAgent.indexOf("Mobile")==-1){
-            return host+mzj[rand(mzj.length-1)]+".jpg";
+            return host+zj[rand(zj.length-1)]+".jpg";
             }else{
-                return host+zj[rand(zj.length-1)]+".jpg";
+                return host+mzj[rand(mzj.length-1)]+".jpg";
             }
     };
     if(navigator.userAgent.indexOf("Mobile")==-1){
