@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pipenv常用命令]]></title>
+    <url>%2F20220714142719.html</url>
+    <content type="text"><![CDATA[记录pipenv命令安装pip install pipenv创建环境pipenv install自定义虚拟环境目录目录下set PIPENV_VENV_IN_PROJECT=Truepipenv install激活虚拟环境pipenv shell退出虚拟环境exit安装依赖包到虚拟环境pipenv install requests查看已经安装的模块pipenv graph卸载已经安装的模块pipenv uninstall requests获取当前虚拟环境的位置pipenv --venv寻找当前项目的根目录pipenv --where通过requirements.txt文件安装模块pipenv install -r requirements.txt从lock文件中生成pipenv lock -r &gt; requirements.txt]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>python</tag>
+        <tag>pipenv</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[命令行常用命令简记]]></title>
+    <url>%2F20220714142622.html</url>
+    <content type="text"><![CDATA[启动cmdwin+R输入cmd回车文件夹空白处按住shift右键以树形结构显示出目录tree，用参数-f 将列出第个文件夹中文件名称，尽量在文件少的目录装B，Ctrl+C可以停止打开文件start 文件名字新建文件夹md d:\typora\fliemkdir newtest 进入根目录后使用新建空文件cd.&gt;flie.txtcd.&gt;flie.docxcd.&gt;flie.ppttype nul&gt; newtest.txt type nul&gt;.txt写入echo 文件中的内容&gt;new.txt一个尖号 &gt;是写入内容，并抹去之前内容，会自动加回车而 两个尖号，&gt;&gt; 是追加，不抹去之前文本内容。删除文件(夹)del flie.txt如果是del 文件夹A是删除文件夹A内的所有带后缀的文件，若文件夹A中有文件夹B，文件夹B不会被修改删除指定后缀的文件del *.txtdel *.docx删除名为flie的空文件夹rd flie删除名为flie的文件夹rd /s D:\flie删除flie文件夹下的所有文件rd flie /s用法：rd[盘符:][路径][子目录名][/s][/q][/?]或rmdir[盘符:][路径][子目录名][/s][/q][/?]参数说明如下：/s 删除指定目录和所有子目录及其包含的所有文件/q 安静模式。删除目录时，不会提示确认信息/？ 显示该命令的帮助信息遍历当前路径下所有文件dir显示当前目录及子文件dir /s显示文件以及文件大小、个数dir /d显示文件dir /b清空小黑窗cls查看命令参数命令 /?复制文件copy 路径\文件名 路径\文件名可以合并tscopy *.ts result.ts移动文件move 路径\文件名 路径\文件名查看ip地址ipconfig查询ip地址(ping)ping www.csdn.net查看网络连接状态netstat -help 获取命令行使用帮助信息netstat -ano //查看网络连接、状态以及对应的进程id关机shutdown -s关闭本地计算机，没有超时或警告shutdown -p强制关闭正在运行的应用程序而不提前警告用户,可搭配-pshutdown -f定时关机shutdown -s -t 秒数关机并重启shutdown -r一段时间后重启shutdown -r -t 秒数注销当前用户shutdown -l休眠shutdown -h 可以搭配-f,shut down -h -f。不可以搭配-t解除命令shutdown -a退出cmdexit打开记事本notepad+路径计算器calc远程桌面连接mstsc任务管理器taskmgr资源管理器explorer注册表regedit修改用户密码net user %username% password查看当前用户whoami查看用户net user自动补全tab键查看历史命令↑或↓查看完整记录F7结束某进程kill -F 进程名 加-F参数后强制结束某进程(为系统的附加工具，默认是没有安装的，在安装目录的Support/tools文件夹内)]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>cmd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[茫忙]]></title>
+    <url>%2F20220712145923.html</url>
+    <content type="text"><![CDATA[感觉高考完后的学习之路无比漫长。有太多太多的东西想学，但高中学习的品质却似乎在慢慢消弭殆尽。C有点难学，又不想学了。想写windows窗口程序，发现了pyqt5，pyside2，又想学。还想学五子棋，打败***。想学死神VS火影，打败我表弟。现在还在学车，考驾照。。。我有好多好多事情想做，但暑假好像过了一半了。。。。。。一个一个来吧！心急吃不了热豆腐。]]></content>
+      <categories>
+        <category>随记</category>
+      </categories>
+      <tags>
+        <tag>随记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[充煤气]]></title>
     <url>%2F20220709061212.html</url>
     <content type="text"><![CDATA[充煤气引发的思考昨天充煤气，结果玩过头忘拿了。”你怎么就忘拿了呢？”这都能忘。忘拿下次要拿十块钱去赎的……自责，自责有什么用？我心情复杂，看了一整部《阿甘正传》都没平复。第二天，心情不好不想起床。奶奶让我十一点半去拿，我故意赖到十一点半。我感觉心理有根刺，不痛但烦。下午一点半，我带着莽一波的心情，做好了被骂，付钱的准备，忐忑上路。去到煤气供应点，我诚恳地跟阿姨说明原因，阿姨严肃地跟我重复道，煤气瓶不给过夜。但直到我带着瓶子开车回家她也没问我要钱。我知道，煤气瓶过夜容易引发被偷，爆炸等危险。所以罚款是应该的。但阿姨的言语教育却让我感到人世的一丝温暖。我想起了多年前我上六年级，开单车翻山越岭到镇上，在半路爆胎了。我拖着单车无助地走在路上，看到路边仅有的一家修单车的店。我背着书包等在那里，有辆摩托车排在我前面。看看时间，等修完铁定迟到了。可就在这时，老板娘却说先帮那个学生修，他快迟到了。我的内心涌起无限的感激。长大后，我听无数人说过社会多么险恶，看过无数被社会摧残的样子，颓废的样子，也有空手套白狼的滋润的样子。有时我会想，我以后会做一个好人还是坏人，会不会变成一个物质的人，书中那些为中华之崛起而读书的样子，功成不必在我，功成必定有我的样子，我会想，未来的中国，是什么样子？其实，每个人的心中都有一个答案。你所站立的那个地方，正是你的中国。你怎么样，中国便怎么样。你是什么，中国便是什么。你有光明，中国便不黑暗。你有良知，中国便不会沉沦。你有尊严，中国便不会糟糕。你找准了方向，中国便不会后退。]]></content>
