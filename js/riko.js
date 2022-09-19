@@ -69,7 +69,8 @@ $('.toc-item').each(function(){
 
 var segs = [];
 $('.toc-item').each(function(){
-       segs.push(document.getElementById($(this).find("a")[0].getAttribute("href").slice(1)));
+        // console.log($(this).find("a")[0].getAttribute("href").slice(1))
+       segs.push(document.getElementById(decodeURIComponent($(this).find("a")[0].getAttribute("href").slice(1))));
 });
 $(window).scroll(function(){
     var scrollTop = $(this).scrollTop()+5;
