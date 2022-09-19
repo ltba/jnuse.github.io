@@ -58,13 +58,13 @@ $('.wife').fadeToggle();
 
 $('.toc-item').each(function(){
     $(this).find("a")[0].onclick=function(){
-        document.getElementById(this.getAttribute("href").slice(1)).scrollIntoView({
+        document.getElementById(decodeURIComponent(this.getAttribute("href").slice(1))).scrollIntoView({
                     behavior: "smooth",
                     block: "start"
        });
        return false;
     };
-    $(this).find("a")[0].className+=' '+$(this).find("a")[0].getAttribute("href").slice(1);
+    $(this).find("a")[0].className+=' '+decodeURIComponent($(this).find("a")[0].getAttribute("href").slice(1));
 });
 
 var segs = [];
