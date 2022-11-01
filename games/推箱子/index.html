@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="鱼C工作室|免费编程视频教学|Python教学|Web开发教学|全栈开发教学|C语言教学|汇编教学|Win32开发|加密与解密|Linux教学">
+	<meta name="description" content="鱼C工作室为大家提供最有趣的编程视频教学。">
+	<meta name="author" content="鱼C工作室">
+	<title>鱼C-推箱子</title>
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		body {
+			overflow: hidden;
+		}
+
+		.game {
+			width: 560px;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+
+<body onkeydown="doKeyDown(event)">
+	<div class="game">
+		<canvas id="canvas" width="560" height="560"></canvas>
+		<div id="msg"></div>
+		<input type="button" value="上一关" onclick="NextLevel(-1)">
+		<input type="button" value="下一关" onclick="NextLevel(1)">
+		<input type="button" value="我要重玩" onclick="NextLevel(0)">
+		<input type="button" value="游戏说明" onclick="showHelp()">
+	</div>
+</body>
+<script src="js/mapDataHundred.js"></script>
+<script src="js/fishc.js"></script>
+
+</html>

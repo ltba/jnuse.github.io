@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="鱼C工作室|免费编程视频教学|Python教学|Web开发教学|全栈开发教学|C语言教学|汇编教学|Win32开发|加密与解密|Linux教学">
+	<meta name="description" content="鱼C工作室为大家提供最有趣的编程视频教学。">
+	<meta name="author" content="鱼C工作室">
+	<title>鱼C-精简版五子棋</title>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/fishc.js"></script>
+	<style>
+		#div {
+			border: 1px solid lightgray;
+			width: 500px;
+			height: 500px;
+			position: absolute;
+		}
+
+		.beijing {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: rgb(247, 230, 183);
+			position: absolute;
+			z-index: 1;
+		}
+
+		.qipan {
+			width: 92%;
+			height: 92%;
+			border-collapse: collapse;
+		}
+
+		.qipan td {
+			border: 1px solid black;
+			position: relative;
+		}
+
+		.white {
+			border: 1px solid lightgray;
+			border-radius: 50%;
+			background-color: white;
+			position: absolute;
+			z-index: 2;
+			width: 90%;
+			height: 90%;
+			left: -50%;
+			top: -50%;
+			color: lightgray;
+			font-size: 12px;
+			font-weight: bold;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.black {
+			border: 1px solid lightgray;
+			border-radius: 50%;
+			background-color: black;
+			position: absolute;
+			z-index: 2;
+			width: 90%;
+			height: 90%;
+			left: -50%;
+			top: -50%;
+			color: lightgray;
+			font-size: 12px;
+			font-weight: bold;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.win {
+			border: 1px solid red;
+			box-shadow: 0 0 3px 2px red;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div"></div>
+</body>
+
+</html>
+<script>
+	fishc("div").load();
+</script>
