@@ -1,6 +1,7 @@
 //background
-bg.style.backgroundImage="url("+randomimg(true)+")";
-$(".img").each(function(){if(this.style.backgroundImage=='url("/img/all/loading.gif")'){this.style.backgroundImage='url('+randomimg(true)+')'}});
+rimg = new randomimg(true);
+bg.style.backgroundImage="url("+rimg.get_img()+")";
+$(".img").each(function(){if(this.style.backgroundImage=='url("/img/all/loading.gif")'){this.style.backgroundImage='url('+rimg.get_img()+')'}});
 //运行时间
 function run_date(date){
     var created = Date.parse(date);

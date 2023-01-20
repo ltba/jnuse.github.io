@@ -3,7 +3,7 @@
 *Blog: https://yked.gitee.io
 *Created time: 2020.2.25
 */
-function randomimg(zhengjing){
+randomimg = function (zhengjing){
     var rand=function(m){
         return Math.round(Math.random()*(0-m)+m);
     };
@@ -16,16 +16,53 @@ function randomimg(zhengjing){
 ];
     var m=["006nmFISgy1gdvscfpqlbj30u016g7gz","006nmFISgy1gdvscjx1uoj30jl0rpack","006nmFISgy1gdvsco4saij30nv0rs7d2","006nmFISgy1gdvscshmdkj30u016fajn","006nmFISgy1gdvscwh3j8j30mi0vjtgr","006nmFISgy1gdvsd0q8ryj30u019lk5h","006nmFISgy1gdvsd4zd3aj30p00x4x34","006nmFISgy1gdvsd97qkgj30u016k15x","006nmFISgy1gdvsddbzmuj30u013le3z","006nmFISgy1gdvsdhg5gvj30js0rs0zc","006nmFISgy1gdvsdln6lzj30jm0rsjwd","006nmFISgy1gdvsdpu1vpj30jg0rsad0","006nmFISgy1gdvsdu0mucj30jg10kdj6","006nmFISgy1gdvsdy9lw9j30jg0stdi3","006nmFISgy1gdvse2g3obj30jg0sqtd4","006nmFISgy1gdvse6ls4cj30jg0rimzs","006nmFISgy1gdvseat80qj30jg0ww77z","006nmFISgy1gdvsef31odj30jg0vxgnf","006nmFISgy1gdvsej77ncj30jg0q4q5u","006nmFISgy1gdvsesa2kyj30u0170qva","006nmFISgy1gdvsewy52pj30u0193u12","006nmFISgy1gdvsf0mx9vj30u01clb2e","006nmFISgy1gdvsf4fjufj30u01fnnpe","006nmFISgy1gdvsf8sg1pj30u01f8qv7","006nmFISgy1gdvsfcr2gsj30u019oqv5","006nmFISgy1gdvsfgvp49j30u0121qtg","006nmFISgy1gdvsfldvkdj30u019m1kz","006nmFISgy1gdvsfpk6cvj30u019ju10","006nmFISgy1gdvsftl4v1j30u015z4qp","006nmFISgy1gdvsfxqtcej30u017q4qp","006nmFISgy1gdvsg1xrjzj30u015su0b","006nmFISgy1gdvsg62gmuj30u018u7wh","006nmFISgy1gdvsga805bj30u016j7t7","006nmFISgy1gdvsgeho6zj30u016ab29","006nmFISgy1gdvsgim18wj30p00zktb7","006nmFISgy1gdvsgr06u2j30u017vq6x","006nmFISgy1gdvsgv7saaj30u015fadt","006nmFISgy1gdvsgze347j30nk0xcak2","006nmFISgy1gdvsh3l1m6j30u018gdr5","006nmFISgy1gdvsh7vt02j30u018gdsi","006nmFISgy1gdvshc02e2j30u018gami","006nmFISgy1gdvshg8amyj30u018g49b","006nmFISgy1gdvshkemr6j30u018gqa9","006nmFISgy1gdvshook5rj30u01hck48","006nmFISgy1gdvshspknwj30u016eq5n","006nmFISgy1gdvshwz010j30u01fuka2","006nmFISgy1gdvsi15nzpj30u01npai4","006nmFISgy1gdvsi5ed0wj30u0158n0q","006nmFISgy1gdvsi9nejgj30u0140wy0","006nmFISgy1gdvsihzlzbj30pz1k9dj8","006nmFISgy1gdvsim4tgyj30k40sf45e","006nmFISgy1gdvsiqem12j30u016ftbi","006nmFISgy1gdvsiuiegvj30u016gn2w","006nmFISgy1gdvsiyqerpj30u016fdlh","006nmFISgy1gdvsj2xp9nj30u01lpn5i","006nmFISgy1gdvsj73g1aj30rr10uq5h","006nmFISgy1gdvsjbc9ydj30na1r8tdx","006nmFISgy1gdvsjfn66xj30u01hcqcg","006nmFISgy1gdvsjjo66bj30u01hcwmk","006nmFISgy1gdvsjnxdt1j30rl1q8gst","006nmFISgy1gdvsjs7hwfj30u018sn84","006nmFISgy1gdvsk0hz92j30rl15o77s","006nmFISgy1gdvsk4p58mj30r21c2tbe","006nmFISgy1gdvsk8wwfbj30u016g787","006nmFISgy1gdvskd3ig5j30r015ojvz","006nmFISgy1gdvskhd6lpj30u01ao1i8","006nmFISgy1gdvsklhohij30i210479g","006nmFISgy1gdvskpqcufj30u019u12r","006nmFISgy1gdvsku0l6sj30u0190wzi","006nmFISgy1gdvskzg0dfj30rs18gdsv","006nmFISgy1gdvsl2cc46j30u01b8gv3","006nmFISgy1gdvsl6pykwj30u01isat5","006nmFISgy1gdvslaoj7nj30rs1cwanp","006nmFISgy1gdvslex5rsj30u01cowph","006nmFISgy1gdvslj26plj30l60xcn4o","006nmFISgy1gdvslnf8eqj30u01byb29","006nmFISgy1gdvslrfrk6j30m80y6agl","006nmFISgy1gdvslwat0oj30u00vmkjr","006nmFISgy1gdvsm4jnk4j30u016db2e","006nmFISgy1gdvsm8pjiej30u016d1l1","006nmFISgy1gdvt5zo9yyj30u01674qt","006nmFISgy1gdvt63unqyj30u0167u11","006nmFISgy1gdvt67ovq5j30u01epqv9","006nmFISgy1gdvt6bv5hcj30u01chu0z","006nmFISgy1gdvt6fkuy2j30rs1cwkjl","006nmFISgy1gdvt6jnr9wj30rs17jhdt","006nmFISgy1gdvt6whqndj30u0179qv6","006nmFISgy1gdvt70p59dj30u013f7wi","006nmFISgy1gdvt74fhjrj30p00z04qp","006nmFISgy1gdvt78omh3j30u01o01ky","006nmFISgy1gdvt7ctzufj30m80wp4qp","006nmFISgy1gdvt7i44qgj30u016fkjs","006nmFISgy1gdvt7mgcioj30u016d7wn","006nmFISgy1gdvt7pgvu5j30m80vre81","006nmFISgy1gdvt7tnxksj30m80ykb29","006nmFISgy1gdvt7xxglyj30m80vge81","006nmFISgy1gdvt824764j30m80v9b29","006nmFISgy1gdvt86jnx1j30rs12k1ky","006nmFISgy1gdvt8ai9n8j30m80vekjl","006nmFISgy1gdvt8en1y3j30m80vnhdt","006nmFISgy1gdvt8j2t2ij30rs13ab2a","006nmFISgy1gdvt8nzfm6j30u013ke87","006nmFISgy1gdvtawrrbfj30rs13bu0x","006nmFISgy1gdvtc47xu3j30rs13bu0x","006nmFISgy1gdvtca77izj30u01etqvb","006nmFISgy1gdvtfzcz4rj30u01etqvb","006nmFISgy1gdvtg31obnj30rs1jk7wi","006nmFISgy1gdvtg7br9qj30np0xchdt","006nmFISgy1gdvtgbo67rj30u010a1l0","006nmFISgy1gdvtgfrfjzj30u00zj4qr","006nmFISgy1gdvtgk3wbcj30u01bl7wk","006nmFISgy1gdvtgobljtj30u013y1ky","006nmFISgy1gdvtgsla37j30u012nqv6","006nmFISgy1gdvtgwi4tmj30u012xx6q","006nmFISgy1gdvth0wk1ej30u0162x6s","006nmFISgy1gdvth540kuj30u011nnph","006nmFISgy1gdvth93q4fj30u0130hdu","006nmFISgy1gdvthdhy0lj30u0158nph","006nmFISgy1gdvthhl67zj30u015j1l0","006nmFISgy1gdvthlpmv5j30u019wnpe","006nmFISgy1gdvthpzhmwj30u016ohdv","006nmFISgy1gdvthucu01j30u017a1l2","006nmFISgy1gdvthy7mmlj30n51577wh","006nmFISgy1gdvti2j00jj30u0140e83","006nmFISgy1gdvti6har1j30lm0uk4lo","006nmFISgy1gdvtiaqi64j30th15o7wh","006nmFISgy1gdvtiexbtrj30th15ob29","006nmFISgy1gdvtij3w0hj30sx0ukavz","006nmFISgy1gdvtinbuilj30u01554it","006nmFISgy1gdvtirim2qj30u0140b29","006nmFISgy1gdvtivny1gj30rs13iav4","006nmFISgy1gdvtizymlhj30u01c0kjl","006nmFISgy1gdvtj42lt2j30n70xcahk","006nmFISgy1gdvtj89dxqj30rs15onj9","006nmFISgy1gdvtjcj7ttj30u015whdt","006nmFISgy1gdvtjgsf7kj30u01bqb29","006nmFISgy1gdvtjkxasrj30u0160nln","006nmFISgy1gdvtjp29gtj30rs15o4fc","006nmFISgy1gdvtjtbwvpj30rs0xckes","006nmFISgy1gdvtjxit79j30u017wb29","006nmFISgy1gdvtk1qrhvj30rs13ae81","006nmFISgy1gdvtk5vu7fj30p011knpd","006nmFISgy1gdvtka57wkj30p0102hdt","006nmFISgy1gdvtkee03nj30rs18zqv5","006nmFISgy1gdvtkirrqoj30rs138e85","006nmFISgy1gdvtkr1d0wj30p012wb29","006nmFISgy1gdvtkv4k4gj30rs138kjl","006nmFISgy1gdvtkzjdu2j30r815hqv5","006nmFISgy1gdvtl7z05zj30m80v1h7s","006nmFISgy1gdvtlc9j8kj30rs138kjl","006nmFISgy1gdvtlgd09oj30rs1381kx","006nmFISgy1gdvtlooxvoj30q70xcwvz","006nmFISgy1gdvtlszdt6j30nl0xckgr","006nmFISgy1gdvtlxacwij30nl0xc7ns","006nmFISgy1gdvtm5tgoej30n10xc4hs","006nmFISgy1gdvtm9p91lj30ng0xcnmy","006nmFISgy1gdvtme3lymj30jh0ogdow","006nmFISgy1gdvtmi6kbmj30nl0xch55","006nmFISgy1gdvtmm7cxij30jg0r0qap","006nmFISgy1gdvtmqezy9j30k00rsk1e","006nmFISgy1gdvtmyx9tpj30fq0m8als","006nmFISgy1gdvtn3016lj30fa0lbn6u","006nmFISgy1gdvtn78e3aj30nn0xcwt6","006nmFISgy1gdvtnbid2gj30o00xctv3","006nmFISgy1gdvtngi5myj30qn0x0tqg","006nmFISgy1gdvtnjwzhcj30in0qnn69","006nmFISgy1gdvtno2jrfj30iy0p04b1","006nmFISgy1gdvto0m170j30j10qotbk","006nmFISgy1gdvto4vk9uj30oy0qoacu","006nmFISgy1gdvto91iz1j30hd0qodiu","006nmFISgy1gdvtoe1xewj30el0kt3zf","006nmFISgy1gdvtopu9fuj30iw0qo42v","006nmFISgy1gdvtoyw8q5j31hb0u0kjr","006nmFISgy1gdvtp2gg5jj30lo0t84jp","006nmFISgy1gdvtp6jrdbj30k30sfn06","006nmFISgy1gdvtpb13enj30u016dqv5","006nmFISgy1gdvtpf4h2jj30m90xcnj5","006nmFISgy1gdvtpjeh4dj30u016gb29","006nmFISgy1gdvtpnde0uj30c80h3ta1","006nmFISgy1gdvtprlymej30c80lqjsx","006nmFISgy1gdvtpvt4kzj30c80lq407","006nmFISgy1gdvtq00elsj30c80lqwge","006nmFISgy1gdvtq44g6qj30c80lq769","006nmFISgy1gdvtq8bx3vj30c80lqgna","006nmFISgy1gdvtqciqjtj30c80haq4b","006nmFISgy1gdvtqgt7r1j30c80lqwgh","006nmFISgy1gdvtqkwtopj30c80lqabi","006nmFISgy1gdvtqtee3rj30rs13au0x","006nmFISgy1gdvtr23qs3j30u016fu0z","006nmFISgy1gdvtr5xkdmj30ro15qdlv","006nmFISgy1gdvtra4pwyj30jg0rin4n","006nmFISgy1gdvtrj1yyzj30rs13anlk","006nmFISgy1gdvtrn698uj30ic0rstqa","006nmFISgy1gdvtrrhh72j30rs18g7wh","006nmFISgy1gdvtrvk6e4j30d40d47s8","006nmFISgy1gdvtrzutrzj30m50xcndd","006nmFISgy1gdvts45rykj30jz0pe1kx","006nmFISgy1gdvts80o6aj30lw0uxap0","006nmFISgy1gdvtsbz50mj30qt13j11b","006nmFISgy1gdvtsgill5j30rs13ab29","006nmFISgy1gdvtskupodj30rv13ce81","006nmFISgy1gdvtsojxbxj30p00xcdwe","006nmFISgy1gdvtstnbezj30u014x4qq","006nmFISgy1gdvtsyxhdqj30u015znph","006nmFISgy1gdvtu40ojij30u015znph","006nmFISgy1gdvtuo24vdj30u01361ky","006nmFISgy1gdvtut82axj30u016fnpf","006nmFISgy1gdvtxs3355j30u016fnpf","006nmFISgy1gdvty3arr5j30m80wwavj","006nmFISgy1gdvty7q20aj30u00u0x6q","006nmFISgy1gdvtysjbj6j30u00xch62","006nmFISgy1gdvtz0vwfqj30j20m849n","006nmFISgy1gdvtz53l78j30jm0ukqht","006nmFISgy1gdvtz988hij30j20m849n","006nmFISgy1gdvtzdfhg4j30jm0ukqht","006nmFISgy1gdvtzua1bhj30j10qfjzi","006nmFISgy1gdvtzyg9xaj30jk0xck9i","006nmFISgy1gdvu06t0t0j30mj0xcarn","006nmFISgy1gdvu0azcy0j30li0xc12j","006nmFISgy1gdvu0f82d5j30m80vdwom","006nmFISgy1gdvu0jdufkj30to0xcgz8","006nmFISgy1gdvu0w09u9j30o60xchad","006nmFISgy1gdvu106em0j30g20mqalh","006nmFISgy1gdvu18n5ytj30pd0xc1kx","006nmFISgy1gdvu1cxnwyj30n00xcaut","006nmFISgy1gdvu1gz1j3j30mf0xc7k6","006nmFISgy1gdvu1pi13lj30jp0rsdsr","006nmFISgy1gdvu1tnmhdj30u00w7dz0","006nmFISgy1gdvu1xqj5oj30lf0xcajy","006nmFISgy1gdvu264emej30no0xcwnc","006nmFISgy1gdvu2aclwij30ku0p07ec","006nmFISgy1gdvu2eok3oj30m80vqqm5","006nmFISgy1gdvu2it3x4j30j60xc46r","006nmFISgy1gdvu2n0mrtj30nl0xcb18","006nmFISgy1gdvu2r3i2qj30ii0pwqb6","006nmFISgy1gdvu2vf7z5j30ne0xc1f3","006nmFISgy1gdvu2zok3xj30nl0xctug","006nmFISgy1gdvu33v6agj30nk0xc4h8","006nmFISgy1gdvu381k03j30qq0xcnpd","006nmFISgy1gdvu3gcbz1j30mj0xctqs","006nmFISgy1gdvu3klkmwj30oc0xc4e9","006nmFISgy1gdvu3or768j30jg0ro7ib","006nmFISgy1gdvu3t1m0cj30m80xck7r","006nmFISgy1gdvu3x2w9yj30ou0xch4n","006nmFISgy1gdvu41cwnuj30uk0thwqp","006nmFISgy1gdvu45mou8j30m80xcqk3","006nmFISgy1gdvu4dumsdj30jv0rs4ak","006nmFISgy1gdvu4i76f2j30m80w5dtd","006nmFISgy1gdvu4m9tkrj30jg0nc10i","006nmFISgy1gdvu4qlwcyj30p10xc1bu","006nmFISgy1gdvu4yvab4j30qo0xcapr","006nmFISgy1gdvu53831dj30my0xce7c","006nmFISgy1gdvu5bjd7ij30ii0rsqbz","006nmFISgy1gdvu5fs44fj30re0xcx4h","006nmFISgy1gdvu5jxqq2j30oa0rewtj","006nmFISgy1gdvu5s8jugj30hs0qoqko","006nmFISgy1gdvu5wo5dwj30hs0qoniq","006nmFISgy1gdvu60lzl4j30hs0qo17g","006nmFISgy1gdvu68zt9dj30hs0qoqdm","006nmFISgy1gdvu6d9cgcj30hs0qoapy","006nmFISgy1gdvu6pwto7j30hs0qon5c","006nmFISgy1gdvu6txy7xj30hs0qo7cw","006nmFISgy1gdvu7arcyrj30hs0qoak3","006nmFISgy1gdvu7f1cb8j30hs0qotv0","006nmFISgy1gdvu7rjjttj30hs0qoake","006nmFISgy1gdvu7vro6ej30hs0qo470","006nmFISgy1gdvu846d0jj30hs0qotja","006nmFISgy1gdvu8co80yj30hs0qo7wh","006nmFISgy1gdvu8gwuovj30hs0qoqeg","006nmFISgy1gdvu8l0xfrj30hs0qoap4","006nmFISgy1gdvu8p6o8gj30hs0qowp1","006nmFISgy1gdvu8th0elj30hs0qon8y","006nmFISgy1gdvu8xng6uj30hs0qo12u","006nmFISgy1gdvu9qyv8vj30hs0qoqft","006nmFISgy1gdvu9v61e3j30hs0qoqes","006nmFISgy1gdvua3xpq7j30hs0qox2j","006nmFISgy1gdvua7ymv3j30hs0qoqlq","006nmFISgy1gdvuad5myuj30ni0xcnpd","006nmFISgy1gdvuahd74wj30ql11unpd","006nmFISgy1gdvuakommpj30qq11uh6i","006nmFISgy1gdvuap765aj30u016g7wh","006nmFISgy1gdvuatdn0mj30u016l7wh","006nmFISgy1gdvuax1gy1j30qq11ue0p","006nmFISgy1gdvub1eev9j30u016fwz7","006nmFISgy1gdvub5r44sj30u016g1kx","006nmFISgy1gdvub9preyj30rs11okcs","006nmFISgy1gdvubf64kaj30u016jx6q","006nmFISgy1gdvubiahsmj30u012nhbg","006nmFISgy1gdvubmvlljj30u012lnk0","006nmFISgy1gdvubqycrwj30sc1444qp","006nmFISgy1gdvubvmymbj30u014i4qt","006nmFISgy1gdvubzqetmj30u016g7wi","006nmFISgy1gdw0mfwavuj30u01b5b0e","006nmFISgy1gdw0mfzhyoj30qo0xchdt","006nmFISgy1gdw0mfq1msj30go0mgape","006nmFISgy1gdw0mfs574j30kb0rvk94","006nmFISgy1gdw0mfyldlj30u01bd4qp","006nmFISgy1gdw0mfuq5vj30kd0uk7iv"];
     
-    if(zhengjing){
-        if(navigator.userAgent.indexOf("Mobile")==-1){
-            return host+zj[rand(zj.length-1)]+".jpg";
-            }else{
-                return host+mzj[rand(mzj.length-1)]+".jpg";
+    this.pd=0;
+
+    this.get_network=function (){//1为正常，2为超时
+        pd=0;
+        $.ajax({
+            url:host+zj[rand(zj.length-1)]+".jpg",
+            type:"GET",
+            async:false,
+            timeout:1,
+            success:function(result,status,xhr){
+                console.log("github img",status);
+            },
+            error:function(xhr,status,error){
+                console.log(status,error);
+                pd=1;
             }
-    };
-    if(navigator.userAgent.indexOf("Mobile")==-1){
-        return host+pc[rand(pc.length-1)]+".jpg";
-        }else{
-            return host+m[rand(m.length-1)]+".jpg";
+        });
+        //console.log(pd);
+        return pd?1:2
+    }
+
+
+    this.normal = function (){
+        if(zhengjing){
+            if(navigator.userAgent.indexOf("Mobile")==-1){
+                return host+zj[rand(zj.length-1)]+".jpg";
+                }else{
+                    return host+mzj[rand(mzj.length-1)]+".jpg";
+                }
+        };
+        if(navigator.userAgent.indexOf("Mobile")==-1){
+            return host+pc[rand(pc.length-1)]+".jpg";
+            }else{
+                return host+m[rand(m.length-1)]+".jpg";
+            }
         }
+    this.get_img = function(){
+        switch(this.pd){
+            case 0:
+                this.pd = this.get_network();
+                if(this.pd==1)return this.normal();
+                return "https://tuapi.eees.cc/api.php?category=dongman&type=302&t="+rand(pc.length-1);
+            case 1:
+                return this.normal();
+            case 2:
+                return "https://tuapi.eees.cc/api.php?category=dongman&type=302&t="+rand(pc.length-1);
+        }
+    }
+
 }
