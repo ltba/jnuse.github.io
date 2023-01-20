@@ -18,23 +18,16 @@ randomimg = function (zhengjing){
     
     this.pd=0;
 
-    this.get_network=function (){//1为正常，2为超时
-        pd=0;
+    this.pd_network=function (callback){//0为正常，1为超时
+
         $.ajax({
             url:host+zj[rand(zj.length-1)]+".jpg",
             type:"GET",
-            async:false,
-            timeout:1,
-            success:function(result,status,xhr){
-                console.log("github img",status);
-            },
-            error:function(xhr,status,error){
-                console.log(status,error);
-                pd=1;
-            }
+            async:true,
+            timeout:500,
+            complete:callback
         });
-        //console.log(pd);
-        return pd?1:2
+
     }
 
 
@@ -53,15 +46,10 @@ randomimg = function (zhengjing){
             }
         }
     this.get_img = function(){
-        switch(this.pd){
-            case 0:
-                this.pd = this.get_network();
-                if(this.pd==1)return this.normal();
-                return "https://tuapi.eees.cc/api.php?category=dongman&type=302&t="+rand(pc.length-1);
-            case 1:
-                return this.normal();
-            case 2:
-                return "https://tuapi.eees.cc/api.php?category=dongman&type=302&t="+rand(pc.length-1);
+        if(this.pd){
+            return "https://tuapi.eees.cc/api.php?category=dongman&type=302&t="+rand(pc.length-1);
+        }else{
+            return this.normal()
         }
     }
 

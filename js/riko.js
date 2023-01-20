@@ -1,7 +1,14 @@
 //background
 rimg = new randomimg(true);
+rimg.pd_network(function(xhr,status){
+if(status=="success")rimg.pd=0;
+if(status=="timeout")rimg.pd=1;
+// console.log(rimg.get_img(),rimg.pd);
 bg.style.backgroundImage="url("+rimg.get_img()+")";
 $(".img").each(function(){if(this.style.backgroundImage=='url("/img/all/loading.gif")'){this.style.backgroundImage='url('+rimg.get_img()+')'}});
+
+});
+
 //运行时间
 function run_date(date){
     var created = Date.parse(date);
