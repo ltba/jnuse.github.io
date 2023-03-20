@@ -548,7 +548,7 @@ new Vue({
     streamDownload(isMp4){
       this.isGetMP4 = isMp4
       this.title = new URL(this.url).searchParams.get('title') || this.title // 获取视频标题
-      let fileName = this.title || prompt("请输入视频标题：",this.formatTime(new Date(), 'YYYY_MM_DD hh_mm_ss'))
+      let fileName = this.title || this.formatTime(new Date(), 'YYYY_MM_DD hh_mm_ss')
       if(document.title !== 'm3u8 downloader'){
         fileName = this.getDocumentTitle()
       }
@@ -754,7 +754,7 @@ new Vue({
             this.streamWriter.close()
           }
         } else if (this.finishNum === this.rangeDownload.targetSegment) {
-          let fileName = this.title || prompt("请输入视频标题：",this.formatTime(new Date(), 'YYYY_MM_DD hh_mm_ss'))
+          let fileName = this.title || this.formatTime(new Date(), 'YYYY_MM_DD hh_mm_ss')
           if(document.title !== 'm3u8 downloader'){
             fileName = this.getDocumentTitle()
           }
@@ -874,7 +874,7 @@ new Vue({
     // 强制下载现有片段
     forceDownload() {
       if (this.mediaFileList.length) {
-        let fileName = this.title || prompt("请输入视频标题：",this.formatTime(new Date(), 'YYYY_MM_DD hh_mm_ss'))
+        let fileName = this.title || this.formatTime(new Date(), 'YYYY_MM_DD hh_mm_ss')
         if(document.title !== 'm3u8 downloader'){
           fileName = this.getDocumentTitle()
         }
