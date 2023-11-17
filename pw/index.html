@@ -56,9 +56,11 @@ $(function () {
             reader.onload = function(){
                 pw=JSON.parse(decode(this.result));
                 parse(pw);
-                new ClipboardJS('.btn',{text:function(t){
+                cjs=new ClipboardJS('.btn',{text:function(t){
                     return document.getElementById(t.getAttribute(("target"))).value;
                 }});
+                cjs.on('success',function(e){tips("复制成功！")});
+                cjs.on('error',function(e){tips("复制失败！")});
 
             }
         // $("#toUploaded").html("<span class='glyphicon glyphicon-check'></span> 您选择了 " + filePaths[0].name + " (/≧▽≦)/~");
@@ -87,6 +89,28 @@ function parse(pw){
     $("#content").append("<button onclick='save()'>保存</button>");
     $("#content").append("<button onclick='down()'>下载</button>");
 
+}
+// tips("well");
+function tips(text){
+    var $i=$("<p/>").text(text);      //新建一个b标签，并显示提示
+    let x=document.body.clientWidth/2;
+    let y=document.documentElement.clientHeight/2;
+    $i.css({                            //为标签赋予css值  
+        "z-index":99999, 
+        "top":y-20,   
+        "left":x,   
+        "position":"fixed",   
+        "color":"#E94F06",  
+        "font-family":"微软雅黑",  
+        "cursor":"default",  
+        "-moz-user-select": "none",  
+        "-webkit-user-select": "none",  
+        "-ms-user-select": "none",  
+        "-khtml-user-select": "none",  
+        "user-select": "none",  
+    }); 
+    $("body").append($i);               //在尾部插入  
+    $i.animate( {"top":y-180,"opacity":0}, 3000, function(){$i.remove();});     //动画消除 
 }
 
 function decode(pw){
@@ -132,7 +156,7 @@ var dlDoc = (text,filename) =>{
 };
 
 function add(){
-    pw.pw.push({
+    pw.pw.unshift({
         "name":"",
         "d":"",
         "an":"",
