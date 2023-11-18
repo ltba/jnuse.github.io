@@ -55,11 +55,27 @@
             }
             return ret;
         }
-        
+
+        var ls = location.search;
+        if (ls.substring(0,3) == "?n="){
+            var ls = ls.substring(1,ls.length);
+            var arr = ls.split("&");
+            var data = new Array();
+            for (i in arr){
+                data[arr[i].split("=")[0]]=arr[i].split("=")[1];
+            }
+            if (data["n"] != ""){
+                randomN=data["n"];
+            }
+
+        }else if(ls==""){
+            randomN=3;
+        }
+
         // 将生成的内容显示在页面上
         var contentParagraph = document.getElementById("randomContent");
         for (var n = 0; n < 100; n++) {
-            contentParagraph.textContent += getRandomN(3) + " ";
+            contentParagraph.textContent += getRandomN(randomN) + " ";
         }
     </script>
 </body>
