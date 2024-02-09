@@ -4,15 +4,14 @@ Github：https://github.com/NianBroken/Firework_Simulator
 Gitee：https://gitee.com/nianbroken/Firework_Simulator
 */
 const Ticker = (function TickerFactory(window) {
-	'use strict';
+	"use strict";
 
 	const Ticker = {};
-
 
 	// public
 	// will call function reference repeatedly once registered, passing elapsed time and a lag multiplier as parameters
 	Ticker.addListener = function addListener(callback) {
-		if (typeof callback !== 'function') throw('Ticker.addListener() requires a function reference passed for a callback.');
+		if (typeof callback !== "function") throw "Ticker.addListener() requires a function reference passed for a callback.";
 
 		listeners.push(callback);
 
@@ -50,42 +49,39 @@ const Ticker = (function TickerFactory(window) {
 		}
 
 		// fire custom listeners
-		listeners.forEach(listener => listener.call(window, frameTime, frameTime / 16.6667));
+		listeners.forEach((listener) => listener.call(window, frameTime, frameTime / 16.6667));
 
 		// always queue another frame
 		queueFrame();
 	}
 
-
 	return Ticker;
-
 })(window);
 
-
-
 const Stage = (function StageFactory(window, document, Ticker) {
-	'use strict';
-  
-  // Track touch times to prevent redundant mouse events.
+	"use strict";
+
+	// Track touch times to prevent redundant mouse events.
 	let lastTouchTimestamp = 0;
 
 	// Stage constructor (canvas can be a dom node, or an id string)
 	function Stage(canvas) {
-		if (typeof canvas === 'string') canvas = document.getElementById(canvas);
+		if (typeof canvas === "string") canvas = document.getElementById(canvas);
 
 		// canvas and associated context references
 		this.canvas = canvas;
-		this.ctx = canvas.getContext('2d');
-    
-    // Prevent gestures on stages (scrolling, zooming, etc)
-    this.canvas.style.touchAction = 'none';
+		this.ctx = canvas.getContext("2d");
+
+		// Prevent gestures on stages (scrolling, zooming, etc)
+		this.canvas.style.touchAction = "none";
 
 		// physics speed multiplier: allows slowing down or speeding up simulation (must be manually implemented in physics layer)
 		this.speed = 1;
 
 		// devicePixelRatio alias (should only be used for rendering, physics shouldn't care)
 		// avoids rendering unnecessary pixels that browser might handle natively via CanvasRenderingContext2D.backingStorePixelRatio
-		this.dpr = Stage.disableHighDPI ? 1 : ((window.devicePixelRatio || 1) / (this.ctx.backingStorePixelRatio || 1));
+		// Language translation of this project into Chinese by Nianbroken
+		this.dpr = Stage.disableHighDPI ? 1 : (window.devicePixelRatio || 1) / (this.ctx.backingStorePixelRatio || 1);
 
 		// canvas size in DIPs and natural pixels
 		this.width = canvas.width;
@@ -97,30 +93,20 @@ const Stage = (function StageFactory(window, document, Ticker) {
 		if (this.width !== this.naturalWidth) {
 			this.canvas.width = this.naturalWidth;
 			this.canvas.height = this.naturalHeight;
-			this.canvas.style.width = this.width + 'px';
-			this.canvas.style.height = this.height + 'px';
+			this.canvas.style.width = this.width + "px";
+			this.canvas.style.height = this.height + "px";
 		}
 
 		// To any known illigitimate users...
-		const badDomains = ['bla'+'ckdiam'+'ondfirew'+'orks'+'.de'];
-		const hostname = document.location.hostname;
-		if (badDomains.some(d => hostname.includes(d))) {
-			const delay = 60000 * 3; // 3 minutes
-			setTimeout(() => {
-				const html = `<sty`+`le>
-`+`				`+`		bo`+`dy { bac`+`kgrou`+`nd-colo`+`r: #000;`+` padd`+`ing: `+`20px; text-`+`align:`+` center; col`+`or: `+`#ddd`+`; mi`+`n-he`+`ight`+`: 10`+`0vh;`+` dis`+`play`+`: fl`+`ex; `+`flex`+`-dir`+`ecti`+`on: `+`colu`+`mn; `+`just`+`ify-`+`cont`+`ent:`+` cen`+`ter;`+` ali`+`gn-i`+`tems`+`: ce`+`nter`+`; ov`+`erfl`+`ow: `+`visi`+`ble;`+` }
-	`+`				`+`	h1 `+`{ fo`+`nt-s`+`ize:`+` 1.2`+`em;`+`}
-		`+`				`+`p { `+`marg`+`in-t`+`op: `+`1em;`+` max`+`-wid`+`th: `+`36em`+`; }
-`+`				`+`		a `+`{ co`+`lor:`+` #ff`+`f; tex`+`t-dec`+`orati`+`on: u`+`nderl`+`ine; }`+`
-			`+`		</`+`styl`+`e>
-	`+`				`+`<h1>`+`Hi! `+`Sorr`+`y to`+` int`+`erru`+`pt t`+`he f`+`irew`+`orks`+`.</h`+`1>
-	`+`				`+`<p>M`+`y na`+`me i`+`s Ca`+`leb.`+` Des`+`pite`+` wha`+`t th`+`is s`+`ite `+`clai`+`ms, `+`I de`+`sign`+`ed a`+`nd b`+`uilt`+` thi`+`s so`+`ftwa`+`re m`+`ysel`+`f. I`+`'ve `+`spen`+`t a `+`coup`+`le h`+`undr`+`ed h`+`ours`+` of `+`my o`+`wn t`+`ime, `+`over`+` tw`+`o ye`+`ars, `+`maki`+`ng i`+`t.</`+`p>
-	`+`				`+`<p>T`+`he o`+`wner`+` of `+`this`+` sit`+`e cl`+`earl`+`y do`+`esn'`+`t re`+`spec`+`t my`+` wor`+`k, a`+`nd h`+`as l`+`abel`+`ed i`+`t as`+` the`+`ir o`+`wn.<`+`/p>
-`+`				`+`	<p>`+`If y`+`ou w`+`ere `+`enjo`+`ying`+` the`+` sho`+`w, p`+`leas`+`e ch`+`eck `+`out `+`<a h`+`ref=`+`"htt`+`ps:/`+`/cod`+`epen`+`.io/`+`Mill`+`erTi`+`me/f`+`ull/`+`XgpN`+`wb">`+`my&n`+`bsp;`+`offi`+`cial`+`&nbs`+`p;ve`+`rsio`+`n&nb`+`sp;h`+`ere<`+`/a>!`+`</p>
-`+`				`+`	<p>I`+`f you`+`'re th`+`e ow`+`ner, <a`+` href="m`+`ailt`+`o:cal`+`ebdotmi`+`ller@`+`gmai`+`l.co`+`m">cont`+`act m`+`e</a>`+`.</p>`;
-				document.body.innerHTML = html;
-			}, delay);
-		}
+		// const badDomains = ['bla'+'ckdiam'+'ondfirew'+'orks'+'.de'];
+		// const hostname = document.location.hostname;
+		// if (badDomains.some(d => hostname.includes(d))) {
+		// 	const delay = 60000 * 3; // 3 minutes
+		// 	// setTimeout(() => {
+		// 	// 	const html = `<style>\n\t\t\t\t\t\tbody { background-color: #000; padding: 20px; text-align: center; color: #ddd; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: visible; }\n\t\t\t\t\t\th1 { font-size: 1.2em;}\n\t\t\t\t\t\tp { margin-top: 1em; max-width: 36em; }\n\t\t\t\t\t\ta { color: #fff; text-decoration: underline; }\n\t\t\t\t\t</style>\n\t\t\t\t\t<h1>Hi! Sorry to interrupt the fireworks.</h1>\n\t\t\t\t\t<p>My name is Caleb. Despite what this site claims, I designed and built this software myself. I've spent a couple hundred hours of my own time, over two years, making it.</p>\n\t\t\t\t\t<p>The owner of this site clearly doesn't respect my work, and has labeled it as their own.</p>\n\t\t\t\t\t<p>If you were enjoying the show, please check out <a href="https://codepen.io/MillerTime/full/XgpNwb">my&nbsp;official&nbsp;version&nbsp;here</a>!</p>\n\t\t\t\t\t<p>If you're the owner, <a href="mailto:calebdotmiller@gmail.com">contact me</a>.</p>`;
+		// 	// 	document.body.innerHTML = html;
+		// 	// }, delay);
+		// }
 
 		Stage.stages.push(this);
 
@@ -132,7 +118,7 @@ const Stage = (function StageFactory(window, document, Ticker) {
 			pointerstart: [],
 			pointermove: [],
 			pointerend: [],
-			lastPointerPos: {x:0, y:0}
+			lastPointerPos: { x: 0, y: 0 },
 		};
 	}
 
@@ -141,29 +127,29 @@ const Stage = (function StageFactory(window, document, Ticker) {
 
 	// allow turning off high DPI support for perf reasons (enabled by default)
 	// Note: MUST be set before Stage construction.
-	//       Each stage tracks its own DPI (initialized at construction time), so you can effectively allow some Stages to render high-res graphics but not others.
+	// Each stage tracks its own DPI (initialized at construction time), so you can effectively allow some Stages to render high-res graphics but not others.
+	// Language translation of this project into Chinese by Nianbroken
 	Stage.disableHighDPI = false;
 
 	// events
 	Stage.prototype.addEventListener = function addEventListener(event, handler) {
 		try {
-			if (event === 'ticker') {
+			if (event === "ticker") {
 				Ticker.addListener(handler);
-			}else{
+			} else {
 				this._listeners[event].push(handler);
 			}
-		}
-		catch (e) {
-			throw('Invalid Event')
+		} catch (e) {
+			throw "Invalid Event";
 		}
 	};
 
 	Stage.prototype.dispatchEvent = function dispatchEvent(event, val) {
 		const listeners = this._listeners[event];
 		if (listeners) {
-			listeners.forEach(listener => listener.call(this, val));
-		}else{
-			throw('Invalid Event');
+			listeners.forEach((listener) => listener.call(this, val));
+		} else {
+			throw "Invalid Event";
 		}
 	};
 
@@ -175,66 +161,67 @@ const Stage = (function StageFactory(window, document, Ticker) {
 		this.naturalHeight = h * this.dpr;
 		this.canvas.width = this.naturalWidth;
 		this.canvas.height = this.naturalHeight;
-		this.canvas.style.width = w + 'px';
-		this.canvas.style.height = h + 'px';
+		this.canvas.style.width = w + "px";
+		this.canvas.style.height = h + "px";
 
-		this.dispatchEvent('resize');
+		this.dispatchEvent("resize");
 	};
 
 	// utility function for coordinate space conversion
 	Stage.windowToCanvas = function windowToCanvas(canvas, x, y) {
 		const bbox = canvas.getBoundingClientRect();
 		return {
-				x: (x - bbox.left) * (canvas.width / bbox.width),
-				y: (y - bbox.top) * (canvas.height / bbox.height)
-			   };
+			x: (x - bbox.left) * (canvas.width / bbox.width),
+			y: (y - bbox.top) * (canvas.height / bbox.height),
+		};
 	};
 	// handle interaction
 	Stage.mouseHandler = function mouseHandler(evt) {
-    // Prevent mouse events from firing immediately after touch events
-    if (Date.now() - lastTouchTimestamp < 500) {
-      return;
-    }
-
-		let type = 'start';
-		if (evt.type === 'mousemove') {
-			type = 'move';
-		}else if (evt.type === 'mouseup') {
-			type = 'end';
+		// Prevent mouse events from firing immediately after touch events
+		if (Date.now() - lastTouchTimestamp < 500) {
+			return;
 		}
 
-		Stage.stages.forEach(stage => {
+		let type = "start";
+		if (evt.type === "mousemove") {
+			type = "move";
+		} else if (evt.type === "mouseup") {
+			type = "end";
+		}
+
+		Stage.stages.forEach((stage) => {
 			const pos = Stage.windowToCanvas(stage.canvas, evt.clientX, evt.clientY);
 			stage.pointerEvent(type, pos.x / stage.dpr, pos.y / stage.dpr);
 		});
 	};
 	Stage.touchHandler = function touchHandler(evt) {
-    lastTouchTimestamp = Date.now();
-    
-    // Set generic event type
-		let type = 'start';
-		if (evt.type === 'touchmove') {
-			type = 'move';
-		}else if (evt.type === 'touchend') {
-			type = 'end';
+		lastTouchTimestamp = Date.now();
+
+		// Set generic event type
+		let type = "start";
+		if (evt.type === "touchmove") {
+			type = "move";
+		} else if (evt.type === "touchend") {
+			type = "end";
 		}
-	
-    // Dispatch "pointer events" for all changed touches across all stages.
-		Stage.stages.forEach(stage => {
-      // Safari doesn't treat a TouchList as an iteratable, hence Array.from()
-      for (let touch of Array.from(evt.changedTouches)) {
-        let pos;
-        if (type !== 'end') {
-          pos = Stage.windowToCanvas(stage.canvas, touch.clientX, touch.clientY);
-          stage._listeners.lastPointerPos = pos;
-          // before touchstart event, fire a move event to better emulate cursor events
-          if (type === 'start') stage.pointerEvent('move', pos.x / stage.dpr, pos.y / stage.dpr);
-        }else{
-          // on touchend, fill in position information based on last known touch location
-          pos = stage._listeners.lastPointerPos;
-        }
-        stage.pointerEvent(type, pos.x / stage.dpr, pos.y / stage.dpr);
-      }
+
+		// Dispatch "pointer events" for all changed touches across all stages.
+		Stage.stages.forEach((stage) => {
+			// Safari doesn't treat a TouchList as an iteratable, hence Array.from()
+			for (let touch of Array.from(evt.changedTouches)) {
+				let pos;
+				if (type !== "end") {
+					pos = Stage.windowToCanvas(stage.canvas, touch.clientX, touch.clientY);
+					stage._listeners.lastPointerPos = pos;
+					// before touchstart event, fire a move event to better emulate cursor events
+					// Language translation of this project into Chinese by Nianbroken
+					if (type === "start") stage.pointerEvent("move", pos.x / stage.dpr, pos.y / stage.dpr);
+				} else {
+					// on touchend, fill in position information based on last known touch location
+					pos = stage._listeners.lastPointerPos;
+				}
+				stage.pointerEvent(type, pos.x / stage.dpr, pos.y / stage.dpr);
+			}
 		});
 	};
 
@@ -244,24 +231,23 @@ const Stage = (function StageFactory(window, document, Ticker) {
 		const evt = {
 			type: type,
 			x: x,
-			y: y
+			y: y,
 		};
 
 		// whether pointer event was dispatched over canvas element
-		evt.onCanvas = (x >= 0 && x <= this.width && y >= 0 && y <= this.height);
+		evt.onCanvas = x >= 0 && x <= this.width && y >= 0 && y <= this.height;
 
 		// dispatch
-		this.dispatchEvent('pointer'+type, evt);
+		this.dispatchEvent("pointer" + type, evt);
 	};
 
-	document.addEventListener('mousedown', Stage.mouseHandler);
-	document.addEventListener('mousemove', Stage.mouseHandler);
-	document.addEventListener('mouseup', Stage.mouseHandler);
-	document.addEventListener('touchstart', Stage.touchHandler);
-	document.addEventListener('touchmove', Stage.touchHandler);
-	document.addEventListener('touchend', Stage.touchHandler);
-
+	document.addEventListener("mousedown", Stage.mouseHandler);
+	document.addEventListener("mousemove", Stage.mouseHandler);
+	document.addEventListener("mouseup", Stage.mouseHandler);
+	document.addEventListener("touchstart", Stage.touchHandler);
+	document.addEventListener("touchmove", Stage.touchHandler);
+	document.addEventListener("touchend", Stage.touchHandler);
 
 	return Stage;
-
 })(window, document, Ticker);
+
