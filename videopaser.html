@@ -9,13 +9,23 @@
     </style>
 </head>
 <body>
-    <iframe src="" id="to" width="100%" height="350" frameborder="0"></iframe>
+    <iframe src="" 
+    id="to"         
+    allowfullscreen="true"   
+    webkitallowfullscreen="true"   
+    mozallowfullscreen="true"   
+    width="100%" 
+    height="350" 
+    frameborder="0">
+    </iframe>
+    url参数为视频url，if参数为接口<br/>
     <script>
         // 吞噬星空https://v.qq.com/x/cover/324olz7ilvo2j5f/j0041cnbbod.html
         function getQueryParam(name) {  
             const searchParams = new URLSearchParams(window.location.search);  
             return searchParams.get(name);  
-        } 
+        }
+        var interface = getQueryParam("if")!=null?getQueryParam("if"):"https://jx.xmflv.cc/?url=";
         function init(){
             url = getQueryParam("url");
             if(url!=null){
@@ -62,7 +72,7 @@
         }
         init();
         function jiexi(url){
-            to.src = "https://jx.xmflv.cc/?url="+url;
+            to.src = interface+url;
         }
     </script>
 </body>
